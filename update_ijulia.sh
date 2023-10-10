@@ -34,7 +34,7 @@ do
 done
 
 # Option to remove Jupyter kernels
-echo "Remove some of the installed kernels? [y/n]"
+echo "Remove some of the installed kernels? [y/N]"
 read yn1
 if [ $yn1 = "y" ]; then
     echo "Indicate the number of the kernels to be remove (seperated by spaces)"
@@ -46,7 +46,7 @@ if [ $yn1 = "y" ]; then
 fi
 
 # Option to add IJulia Jupyter kernel
-echo "Add aditional IJulia jupyter kernels? [y/n]"
+echo "Add aditional IJulia jupyter kernels? [y/N]"
 read yn2
 if [ $yn2 = "y" ]; then
     echo "Indicate the number of Julia threads for the kernel"
