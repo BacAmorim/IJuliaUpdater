@@ -4,7 +4,6 @@ using IJulia
 
 # List installed kernels
 installed_kernels = split(read(`jupyter kernelspec list`, String), "\n")[2:end-1]
-
 kernel_names = String[]
 kernel_locations = String[]
 
@@ -14,6 +13,7 @@ for line in installed_kernels
     push!(kernel_locations, location)
 end
 
+println("")
 println("Installed kernels:")
 for (i, name) in enumerate(kernel_names)
     println("[$i] $(name)")
@@ -21,6 +21,7 @@ end
 
 
 # Remove installed kernels
+println("")
 println("Remove some of the installed kernels? [y/N]")
 yn1 = readline()
 
@@ -34,7 +35,24 @@ if yn1 == "y"
 
 end
 
+installed_kernels = split(read(`jupyter kernelspec list`, String), "\n")[2:end-1]
+kernel_names = String[]
+kernel_locations = String[]
+
+for line in installed_kernels
+    name, location = split(line)
+    push!(kernel_names, name)
+    push!(kernel_locations, location)
+end
+
+println("")
+println("Installed kernels:")
+for (i, name) in enumerate(kernel_names)
+    println("[$i] $(name)")
+end
+
 # Install additional kernels
+println("")
 println("Add aditional IJulia jupyter kernels? [y/N]")
 yn2 = readline()
 
@@ -47,4 +65,20 @@ if yn2 == "y"
         installkernel("julia-$(VERSION)_$(t)_threads", env=Dict("JULIA_NUM_THREADS"=>"$t"))
     end
 
+end
+
+installed_kernels = split(read(`jupyter kernelspec list`, String), "\n")[2:end-1]
+kernel_names = String[]
+kernel_locations = String[]
+
+for line in installed_kernels
+    name, location = split(line)
+    push!(kernel_names, name)
+    push!(kernel_locations, location)
+end
+
+println("")
+println("Installed kernels:")
+for (i, name) in enumerate(kernel_names)
+    println("[$i] $(name)")
 end
