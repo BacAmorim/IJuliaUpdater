@@ -14,7 +14,7 @@ for line in installed_kernels
 end
 
 println("")
-println("Installed kernels:")
+println("Installed jupyter kernels:")
 for (i, name) in enumerate(kernel_names)
     println("[$i] $(name)")
 end
@@ -47,7 +47,7 @@ for line in installed_kernels
 end
 
 println("")
-println("Installed kernels:")
+println("Installed jupyter kernels:")
 for (i, name) in enumerate(kernel_names)
     println("[$i] $(name)")
 end
@@ -80,7 +80,7 @@ for line in installed_kernels
 end
 
 println("")
-println("Installed kernels:")
+println("Installed jupyter kernels:")
 for (i, name) in enumerate(kernel_names)
     println("[$i] $(name)")
 end
