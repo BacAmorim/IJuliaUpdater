@@ -35,6 +35,7 @@ if yn1 == "y"
 
 end
 
+# show installed kernels after changes
 installed_kernels = split(read(`jupyter kernelspec list`, String), "\n")[2:end-1]
 kernel_names = String[]
 kernel_locations = String[]
@@ -67,6 +68,7 @@ if yn2 == "y"
 
 end
 
+# show installed kernels after changes
 installed_kernels = split(read(`jupyter kernelspec list`, String), "\n")[2:end-1]
 kernel_names = String[]
 kernel_locations = String[]
